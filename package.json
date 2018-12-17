@@ -7,7 +7,6 @@
   "rispa:activator": "./activator.js",
   "dependencies": {
     "@rispa/config": "4.2.x",
-    "react-helmet": "^5.2.0",
     "viperhtml": "^2.17.0"
   },
   "devDependencies": {
