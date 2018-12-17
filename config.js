@@ -1,4 +1,5 @@
 const path = require('path')
+const html = require('./html')
 
 const config = {
   publicPath: '/',
@@ -29,6 +30,7 @@ const config = {
     'not last 4 Baidu versions',
     'not BlackBerry <= 9',
   ],
+  html,
 }
 
 module.exports = config
