@@ -1,13 +1,13 @@
-
 const { wire } = require('viperhtml')
 
 const renderScript = path => path ? wire()`<script src="${path}" defer></script>` : ''
+const renderLink = path => path ? wire()`<link src="${path}" media="screen, projection" rel="stylesheet" type="text/css" charSet="UTF-8"/>` : ''
 
 const renderHtml = ({
   title,
   meta,
-  link,
-  script = {},
+  css = [],
+  js = {},
 }) => wire()`
   <!doctype html>
   <html>
@@ -16,14 +16,14 @@ const renderHtml = ({
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width">
       ${[meta]}
-      ${[link]}
+      ${[css.map(renderLink)]}
     </head>
     <body>
       <div id="content">
       </div>
-      ${renderScript(script.polyfill)}
-      ${renderScript(script.vendor)}
-      ${script.chunks.map(renderScript)}
+      ${renderScript(js.polyfill)}
+      ${renderScript(js.vendor)}
+      ${js.chunks.map(renderScript)}
     </body>
   </html>
 `.toString()
