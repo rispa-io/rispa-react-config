@@ -6,7 +6,8 @@
   "license": "MIT",
   "rispa:activator": "./activator.js",
   "dependencies": {
-    "@rispa/config": "4.2.x"
+    "@rispa/config": "4.2.x",
+    "viperhtml": "^2.17.0"
   },
   "devDependencies": {
     "@rispa/eslint-config": ">=3.0.0"
