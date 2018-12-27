@@ -1,17 +1,19 @@
 const path = require('path')
 const renderHtml = require('./html')
 
+const outputPath = path.resolve(__dirname, '../../build')
+
 const config = {
   publicPath: '/',
-  outputPath: path.resolve(__dirname, '../../build'),
+  outputPath,
+  context: path.resolve(outputPath, '..'),
   server: {
     host: 'localhost',
     port: process.env.PORT || 3000,
   },
   browsers: [
     // general
-    '> 1%',
-    'last 4 versions',
+    '> 0.25%',
 
     // desktop
     'Explorer >= 11',
